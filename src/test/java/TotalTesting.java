@@ -10,10 +10,12 @@ import generated.process_1dxzyrd.TC_03_Aufgabe_Benutzer;
 import generated.process_1ijt5ts.TC_12_2a_Gatways_AND_AND_a;
 import generated.process_1iqjuag.TC_12_1a_Gateway_AND_XOR_PathA;
 import generated.process_1iqjuag.TC_12_1b_Gateway_AND_XOR_PathB;
+import generated.process_1s7lcah.TC_21_Message_Throw;
 import generated.process_1vylsaa.TC_06_Aufgabe_Service;
 import generated.process_1dxzyrd.TC_03_Aufgabe_Benutzer;
 import generated.process_1vylsaa.TC_06_Aufgabe_Service;
 import generated.process_16rf89n.TC_11a_Gateway_XOR_true;
+import generated.process_1wq8eqm.TC_22_Nachricht_Fangen;
 import org.camunda.community.bpmndt.api.CallActivityDefinition;
 import org.camunda.community.bpmndt.api.CallActivityHandler;
 import org.camunda.community.bpmndt.api.TestCaseExecutor;
@@ -108,6 +110,18 @@ public class TotalTesting {
     @Test
     public void tc12_2aAND_ANDa() { tc12_2a.createExecutor().execute(); }
 
+//-------------------Events--------------
+    // Intermediate Message Throw
+    @Rule
+    public TC_21_Message_Throw tc21 = new TC_21_Message_Throw();
+    @Test
+    public void tc21MessageThrow() { tc21.createExecutor().execute(); };
+
+    // Intermediate Message Catch
+    @Rule
+    public TC_22_Nachricht_Fangen tc22 = new TC_22_Nachricht_Fangen();
+    @Test
+    public void tc22MessageCatch() { tc22.createExecutor().execute(); };
 
 
 }
